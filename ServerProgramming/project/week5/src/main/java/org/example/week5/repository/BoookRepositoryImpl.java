@@ -84,7 +84,7 @@ public class BoookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public Set<Book> findByFilter(Map<String, List<String>> filter) {
+    public Set<Book> findByFilter(Map<String, List<String>> filter) { //출판사와 카테고리로 필터링 하는 메소드
         Set<Book> booksByPublisher = new HashSet<Book>();
         Set<Book> booksByCategory = new HashSet<Book>();
         Set<String> bookByFilter = filter.keySet();

@@ -10,6 +10,6 @@ public interface BookRepository {
     List<Book> getAllBookMarketList();
     List<Book> findByCategory(String category);
     Book findByBookId(String bookId);
-    Set<Book> findByFilter(Map<String, List<String>> filter);
+    Set<Book> findByFilter(Map<String, List<String>> filter); //인터페이스로 선언을 하고 구현체를 넣는 방식으로 사용하는 것이 유지보수에 좋다.
 
 }
