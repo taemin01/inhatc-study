@@ -1,17 +1,16 @@
 package org.example.week5.repository;
 
-import org.example.week5.domain.BookMarket;
+import org.example.week5.domain.Book;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class BoookRepositoryImpl implements BookRepository {
-    private List<BookMarket> listOfBooks = new ArrayList<BookMarket>();
+    private List<Book> listOfBooks = new ArrayList<Book>();
 
     public BoookRepositoryImpl() {
-        BookMarket book1 = new BookMarket();
+        Book book1 = new Book();
         book1.setBookId("ISBN1234");
         book1.setName("자바스크립트 입문");
         book1.setUnitPrice(30000);
@@ -22,7 +21,7 @@ public class BoookRepositoryImpl implements BookRepository {
         book1.setUnitsInStock(1000);
         book1.setReleaseDate("2024/02/20");
 
-        BookMarket book2 = new BookMarket();
+        Book book2 = new Book();
         book2.setBookId("ISBN1235");
         book2.setName("python 정석");
         book2.setUnitPrice(29800);
@@ -33,7 +32,7 @@ public class BoookRepositoryImpl implements BookRepository {
         book2.setUnitsInStock(1000);
         book2.setReleaseDate("2023/01/10");
 
-        BookMarket book3 = new BookMarket();
+        Book book3 = new Book();
         book3.setBookId("ISBN1236");
         book3.setName("안드로이드 프로그래밍");
         book3.setUnitPrice(32000);
@@ -49,7 +48,65 @@ public class BoookRepositoryImpl implements BookRepository {
     }
 
     @Override
-    public List<BookMarket> getAllBookMarketList() {
+    public List<Book> getAllBookMarketList() {
         return listOfBooks;
+    }
+
+    @Override
+    public Book findByBookId(String bookId) {
+        Book bookInfo = null;
+        for(int i = 0; i < listOfBooks.size(); i++) {
+            Book book = listOfBooks.get(i);
+            if(book != null && book.getBookId() != null && book.getBookId().equals(bookId)) {
+                bookInfo = book;
+                break;
+            }
+        }
+
+        if(bookInfo == null) {
+            throw new IllegalArgumentException("도서 ID가 " + bookId + "인 해당 도서를 찾을 수 없습니다.");
+
+        }
+        return bookInfo;
+    }
+
+    @Override
+    public List<Book> findByCategory(String category) {
+        List<Book> bookByCategory = new ArrayList<Book>();
+
+        for(int i = 0; i < listOfBooks.size(); i++) {
+            Book book = listOfBooks.get(i);
+            if(book != null && book.getCategory() != null && book.getCategory().equals(category)) {
+                bookByCategory.add(book);
+            }
+        }
+        return bookByCategory;
+    }
+
+    @Override
+    public Set<Book> findByFilter(Map<String, List<String>> filter) {
+        Set<Book> booksByPublisher = new HashSet<Book>();
+        Set<Book> booksByCategory = new HashSet<Book>();
+        Set<String> bookByFilter = filter.keySet();
+        if(bookByFilter.contains("publisher")) {
+            for(int j = 0; j < filter.get("publisher").size(); j++) {
+                String publisherName = filter.get("publisher").get(j);
+                for(int i = 0; i < listOfBooks.size(); i++) {
+                    Book book = listOfBooks.get(i);
+                    if(book != null && book.getPublisher() != null && book.getPublisher().equals(publisherName)) {
+                        booksByPublisher.add(book);
+                    }
+                }
+            }
+        }
+        if(bookByFilter.contains("category")) {
+            for(int i = 0; i < filter.get("category").size(); i++) {
+                String categoryName = filter.get("category").get(i);
+                List<Book> bookList = findByCategory(categoryName);
+                booksByCategory.addAll(bookList);
+            }
+        }
+        booksByCategory.retainAll(booksByPublisher);
+        return booksByCategory;
     }
 }
