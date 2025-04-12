@@ -1,2 +1,5 @@
 .DS_Store
-.DS_Store?git 
+.DS_Store?git
+.vscode/*
+!.vscode/launch.json
+.obsidian 
