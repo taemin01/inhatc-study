@@ -91,9 +91,8 @@ public class BoookRepositoryImpl implements BookRepository {
         if(bookByFilter.contains("publisher")) {
             for(int j = 0; j < filter.get("publisher").size(); j++) {
                 String publisherName = filter.get("publisher").get(j);
-                for(int i = 0; i < listOfBooks.size(); i++) {
-                    Book book = listOfBooks.get(i);
-                    if(book != null && book.getPublisher() != null && book.getPublisher().equals(publisherName)) {
+                for (Book book : listOfBooks) {
+                    if (book != null && book.getPublisher() != null && book.getPublisher().equals(publisherName)) {
                         booksByPublisher.add(book);
                     }
                 }
@@ -108,5 +107,14 @@ public class BoookRepositoryImpl implements BookRepository {
         }
         booksByCategory.retainAll(booksByPublisher);
         return booksByCategory;
+    }
+
+    @Override
+    public void setNewBook(Book book) {
+        if(book != null) {
+            listOfBooks.add(book);
+        } else {
+            throw new IllegalArgumentException("도서 정보가 없습니다.");
+        }
     }
 }

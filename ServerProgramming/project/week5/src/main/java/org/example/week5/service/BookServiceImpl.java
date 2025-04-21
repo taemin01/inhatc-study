@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Service
-public class BookServiceImpl implements BookService{
+public class BookServiceImpl implements BookService {
     @Autowired
     private BookRepository bookRepository;
 
@@ -32,5 +32,10 @@ public class BookServiceImpl implements BookService{
     @Override
     public Set<Book> findByFilter(Map<String, List<String>> filter) {
         return bookRepository.findByFilter(filter);
+    }
+
+    @Override
+    public void setNewBook(Book book) {
+        bookRepository.setNewBook(book);
     }
 }
