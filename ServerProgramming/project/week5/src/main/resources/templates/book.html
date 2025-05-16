@@ -24,7 +24,14 @@
     </div>
 
     <div class="row align-items-md-stretch">
-        <div class="col-md-12">
+        <div class="col-md-4 text-center">
+            <img th:src="'/images/'+${book.imageFileName}" alt="image" style="width: 90%">
+            <div class="text-center">
+                <a th:href="@{/books/download(file=${book.imageFileName})}" style="text-decoration: none">이미지 다운로드</a>
+            </div>
+        </div>
+
+        <div class="col-md-8">
             <h3 th:text="${book.name}"></h3>
             <p th:text="${book.description}"></p>
             <br/>
@@ -34,7 +41,7 @@
             <p><b>출판일</b> : <span th:text="${book.releaseDate}"></span></p>
             <p><b>분야</b> : <span th:text="${book.category}"></span></p>
             <p><b>재고수</b> : <span th:text="${book.unitsInStock}"></span></p>
-            <h4 th:text="${book.unitPrice}+'원'"></h4>
+            <h4 th:text="${#numbers.formatInteger(book.unitPrice, 3, 'COMMA')}+'원'"></h4>
             <br/>
             <p><a href="#" class="btn btn-primary">도서주문 &raquo;</a></p>
             <a href="/BookMarket/books" class="btn btn-secondary">도서 목록 &raquo;</a>
