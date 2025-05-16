@@ -18,5 +18,3 @@ public class MvcConfig implements WebMvcConfigurer {
                 .setCachePeriod(60 * 60 * 24 * 30); // 30일 캐시
     }
 }
-
-
