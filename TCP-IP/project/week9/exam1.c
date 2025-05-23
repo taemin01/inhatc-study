@@ -18,3 +18,14 @@ int main() {
 
     return 0;
 }
+// int main(){
+
+//     int num_li[5] = {0, 0, 0, 0, 0};
+//     for(int i=0; i<5; i++){
+        
+//         *num_li+=1;
+//         printf("%d\n", num_li[0]);
+//         printf("num_li[%d]=%d\n", i, num_li[0]);
+//     }
+//     return 0;
+// }
