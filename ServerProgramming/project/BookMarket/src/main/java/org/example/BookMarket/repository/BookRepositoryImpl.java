@@ -1,16 +1,20 @@
 package org.example.BookMarket.repository;
 
+import org.example.BookMarket.com.springboot.validator.BookId;
 import org.example.BookMarket.domain.Book;
+import org.example.BookMarket.exception.BookIdException;
+import org.example.BookMarket.service.BookService;
+import org.example.BookMarket.service.BookServiceImpl;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.*;
 
 @Repository
-public class BoookRepositoryImpl implements BookRepository {
+public class BookRepositoryImpl implements BookRepository {
     private List<Book> listOfBooks = new ArrayList<Book>();
 
-    public BoookRepositoryImpl() {
+    public BookRepositoryImpl() {
         Book book1 = new Book();
         book1.setBookId("ISBN1234");
         book1.setName("자바스크립트 입문");
@@ -49,6 +53,7 @@ public class BoookRepositoryImpl implements BookRepository {
         listOfBooks.add(book1);
         listOfBooks.add(book2);
         listOfBooks.add(book3);
+//        this.bookServiceImpl = bookServiceImpl;
     }
 
     @Override
@@ -68,7 +73,7 @@ public class BoookRepositoryImpl implements BookRepository {
         }
 
         if(bookInfo == null) {
-            throw new IllegalArgumentException("도서 ID가 " + bookId + "인 해당 도서를 찾을 수 없습니다.");
+            throw new BookIdException(bookId);
 
         }
         return bookInfo;
