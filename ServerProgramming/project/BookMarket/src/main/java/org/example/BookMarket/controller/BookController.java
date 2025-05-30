@@ -3,7 +3,7 @@ package org.example.BookMarket.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
-import org.example.BookMarket.com.springboot.validator.UnitsInStockValidator;
+import org.example.BookMarket.validator.UnitsInStockValidator;
 import org.example.BookMarket.domain.Book;
 import org.example.BookMarket.exception.BookIdException;
 import org.example.BookMarket.exception.CategoryException;

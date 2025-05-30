@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="INFO" moniterInterval="30">
+    <Properties>
+        <Property name="LOG_FORMAT">%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%l -%m%n</Property>
+        <!-- 로그 설정 파일에서 사용할 속성 이름 LOG_FORMAT에 로그 출력 형식 속성 값인 중괄호 부분 설정 -->
+        <Property name="BASE_DIR">/Users/antaemin/log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_FORMAT}"/>
+        </Console>
+
+        <RollingFile name="File-Appender" fileName="${BASE_DIR}/monitor.log"
+        filePattern="${BASE_DIR}/%d{yyyy-MM-dd}.log.zip">
+            <PatternLayout pattern="${LOG_FORMAT}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10KB"/>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${BASE_DIR}">
+                    <IfAccmulatedFileCount exceeds="4"/>
+                    <IfFileName glob="*.log"/>
+                    <IfLastModified age="3d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+        <RollingFile name="File-Appender" fileName="${BASE_DIR}/audit.log"
+                     filePattern="${BASE_DIR}/%d{yyyy-MM-dd}.log.zip">
+            <PatternLayout pattern="${LOG_FORMAT}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10KB"/>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${BASE_DIR}">
+                    <IfAccmulatedFileCount exceeds="4"/>
+                    <IfFileName glob="*.log"/>
+                    <IfLastModified age="3d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+    <Loggers name="com.springboot">
+        <Root level="INFO">
+            <AppenderRef ref="Console-Appender"/>
+        </Root>
+        <Logger name="org.example.BookMarket.Interceptor.MonitoringInterceptor" level="INFO" additivity="true">
+            <AppenderRef ref="File-Appender"/>
+        </Logger>
+        <Logger name="org.example.BookMarket.Interceptor.AuditingInterceptor" level="INFO" additivity="true">
+            <AppenderRef ref="File-Appender"/>
+        </Logger>
+    </Loggers>
+</Configuration>

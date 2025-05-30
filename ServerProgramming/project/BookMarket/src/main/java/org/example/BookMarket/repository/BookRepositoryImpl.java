@@ -1,10 +1,7 @@
 package org.example.BookMarket.repository;
 
-import org.example.BookMarket.com.springboot.validator.BookId;
 import org.example.BookMarket.domain.Book;
 import org.example.BookMarket.exception.BookIdException;
-import org.example.BookMarket.service.BookService;
-import org.example.BookMarket.service.BookServiceImpl;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;

@@ -1,4 +1,4 @@
-package org.example.BookMarket.com.springboot.validator;
+package org.example.BookMarket.validator;
 
 import org.example.BookMarket.domain.Book;
 

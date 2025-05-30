@@ -1,4 +1,4 @@
-package org.example.BookMarket.com.springboot.validator;
+package org.example.BookMarket.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

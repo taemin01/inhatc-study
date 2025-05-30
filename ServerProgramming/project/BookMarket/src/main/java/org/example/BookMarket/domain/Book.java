@@ -3,7 +3,7 @@ package org.example.BookMarket.domain;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
-import org.example.BookMarket.com.springboot.validator.BookId;
+import org.example.BookMarket.validator.BookId;
 import java.math.BigDecimal;
 
 @Data
