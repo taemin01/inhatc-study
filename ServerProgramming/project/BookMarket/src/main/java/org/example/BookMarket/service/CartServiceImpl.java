@@ -19,4 +19,19 @@ public class CartServiceImpl implements CartService {
     public Cart create(Cart cart) { //저장소 객체에서 장바구니 ID에 등록된 모든 정보 가져와 반환하는 메서드.
         return cartRepository.create(cart);
     }
+
+    @Override
+    public void update(String cartId, Cart cart) {
+        cartRepository.update(cartId, cart);
+    }
+
+    @Override
+    public void delete(String cardId) {
+        cartRepository.delete(cardId);
+    }
+
+    @Override
+    public Cart validateCart(String cartId) {
+        return null;
+    }
 }

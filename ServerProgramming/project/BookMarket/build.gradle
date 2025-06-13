@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.4.4'
-    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.springframework.boot' version '3.1.4' // 3.4.4는 아직 없을 수 있습니다. 확인 필요
+    id 'io.spring.dependency-management' version '1.1.0' // 최신 안정 버전 확인
 }
 
 group = 'org.example'
@@ -35,6 +35,10 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // 정확한 artifactId 확인 필수
+    runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
 tasks.named('test') {
