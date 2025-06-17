@@ -12,5 +12,6 @@ public interface BookRepository {
     Book findByBookId(String bookId);
     Set<Book> findByFilter(Map<String, List<String>> filter); //인터페이스로 선언을 하고 구현체를 넣는 방식으로 사용하는 것이 유지보수에 좋다.
     void setNewBook(Book book);
-
+    void setUpdateBook(Book book);
+    void setDeleteBook(String bookId);
 }

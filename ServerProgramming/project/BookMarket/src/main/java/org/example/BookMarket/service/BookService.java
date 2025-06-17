@@ -14,4 +14,6 @@ public interface BookService {
     List<Book> findByCategory(String category);
     Set<Book> findByFilter(Map<String, List<String>> filter);
     void setNewBook(Book book);
+    void setUpdateBook(Book book);
+    void setDeleteBook(String bookID);
 }

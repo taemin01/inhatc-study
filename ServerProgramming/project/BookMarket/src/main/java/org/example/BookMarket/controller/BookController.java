@@ -43,7 +43,6 @@ public class BookController {
         this.unitsInStockValidator = unitsInStockValidator;
     }
 
-
     @RequestMapping
     public String requestBookList(Model model) {
         List<Book> list = bookService.getAllBookMarketList();
@@ -109,6 +108,38 @@ public class BookController {
         }
         book.setImageFileName(saveName);
         bookService.setNewBook(book);
+        return "redirect:/books";
+    }
+
+    @GetMapping("/update")
+    public String getUpdateBookForm(@ModelAttribute("updateBook") Book book,
+                                      @RequestParam("id") String bookId, Model model) {
+        Book bookById = bookService.findByBookId(bookId);
+        model.addAttribute("book", bookById);
+        return "updateForm";
+    }
+
+    @PostMapping("/update")
+    public String processUpdatewBookForm(@ModelAttribute("updateBook") Book book) {
+        MultipartFile bookImage = book.getBookImage();
+        String rootDirectory = fileDir;
+        if (bookImage!=null && !bookImage.isEmpty()) {
+            try {
+                String fname = bookImage.getOriginalFilename();
+                bookImage.transferTo(new File(fileDir + fname));
+                book.setImageFileName(fname);
+            } catch (Exception e) {
+                throw new RuntimeException("Book Image saving failed", e);
+
+            }
+        }
+        bookService.setUpdateBook(book);
+        return "redirect:/books";
+    }
+
+    @RequestMapping(value = "/delete")
+    public String getDeleteBookForm(Model model, @RequestParam("id") String bookId) {
+        bookService.setDeleteBook(bookId);
         return "redirect:/books";
     }
 

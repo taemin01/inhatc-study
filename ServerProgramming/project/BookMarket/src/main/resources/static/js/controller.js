@@ -18,3 +18,8 @@ function clearCart(cartId) { // 장바구니에 저장된 모든 도서 항목�
         setTimeout('location.reload()', 10);
     }
 }
+
+function deleteConfirm(id) {
+    if (confirm("삭제 합니다!!") == true) location.href ="/books/delete?id="+id;
+    else return;
+}

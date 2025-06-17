@@ -6,16 +6,7 @@
 </head>
 <body>
 <div class="container py-4">
-    <header class="py-3 mb-4 border-bottom">
-        <div class="container d-flex flex-wrap justify-content-center">
-            <a href="/books" class="d-flex align-items-center link-body-emphasis text-body-emphasis text-decoration-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 0C1.12 0 0 .5 0 1.5v13A1.5 1.5 0 0 0 1.5 16h10A1.5 1.5 0 0 0 13 14.5V1.5A1.5 1.5 0 0 0 11.5 0h-9zM1 1.5c0-.28.22-.5.5-.5h9c.28 0 .5.22.5.5v13c0 .28-.22.5-.5.5h-9c-.28 0-.5-.22-.5-.5v-13z"/>
-                </svg>
-                <span class="fs-4">BookMarket</span>
-            </a>
-        </div>
-    </header>
+    <th:block th:replace="~{/module/menu}"></th:block>
     <div class="mb-5 mt-4 bg-body-tertiary rounded-3">
         <div class="container-fluid py-5">
             <h2 class="alert alert-danger">주문해 주셔서 감사합니다.</h2>
