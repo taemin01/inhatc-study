@@ -1,0 +1,13 @@
+﻿<!@charset "utf-8";
+body { display:block; width:950px; margin:0; padding:0; }
+#head_area { float:left; width:100%; background-color:yellow; }
+#foot_area { clear:both; width:100%; background-color:yellow; }
+/* head_area, foot_area : float 설정 및 해제, 너비 950픽셀 전체, 배경색 노랑 */
+#wrapper { width:950px; }
+#left_area { float:left; width:200px; background-color:aqua; min-height:100px; }
+/* left_area : 수평 방향으로 왼쪽에 배치, 너비 200픽셀, 배경색 아쿠아, 최소 높이 100셀픽 */
+#content_area { float:left; width:300px; background-color:#fff; min-height:100px; }
+/* content_area : 수평 방향으로 왼쪽에 배치, 너비 300픽셀, 배경색 흰색, 최소 높이 100픽셀 */
+#right_area { float:left; width:150px; background-color:skyblue; min-height:100px; }
+/* right_area : 수평 방향으로 왼쪽에 배치, 너비 150픽셀, 배경색 하늘색, 최소 높이 100픽셀 */
+
