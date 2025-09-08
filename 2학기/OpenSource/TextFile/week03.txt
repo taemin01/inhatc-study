@@ -1,5 +1,22 @@
 리눅스 명령어
 echo "출력 내용" >> 파일명
+rm 파일명
+history
 
 깃 명령어
+git clone 원격 저장소 링크 . -> 로컬에서 원격 리포지토리와 폴더 이름을 똑같이 만들어놔도
+				이렇게 하면 원격 리포지토리 폴더를 가져오지 않고 파일만 가져옴
+				opensource/opensource가 아니라 만든 opensource 밑에 파일만 가져옴 
+git branch -M main
+git remote add https://github.com/id/repositoryname.git
+git remote remove origin
+git clone repository url
+git push -u origin main
+git push
+git remote -v 로컬에서 어떤 원격을 가리키는지 확인 가능한 명령어
+
+
+오픈소스 클론 시 발생 가능한 이슈
+오픈소스 리포지토리를 클론하면 해당 깃 저장소에는 push 할 권리가 없다
+따라서 내 리포지토리를 만들고 push를 해야한다.
 
