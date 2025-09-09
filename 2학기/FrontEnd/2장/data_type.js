@@ -1,0 +1,13 @@
+﻿var str = "웹 프로그래밍";
+document.write("str의 내용 : " + str + "<br />");
+document.write("str의 자료형 : " + typeof(str) + "<hr />");
+var num = 10;
+document.write("num의 내용 : " + num + "<br />");
+document.write("num의 자료형 : " + typeof(num) + "<hr />");
+var n = 10, bool;
+bool = (n > 0);
+document.write("bool의 내용 : " + bool + "<br />");
+document.write("bool의 자료형 : " + typeof(bool) + "<hr />");
+var arr = ["a", "b", "c"];
+document.write("arr[2]의 내용 : " + arr[2] + "<br />");
+document.write("arr의 자료형 : " + typeof(arr));

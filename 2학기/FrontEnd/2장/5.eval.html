@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title> eval() 실습 </title>
+<script>
+function calculate(form) {
+  form.result.value = eval(form.expr.value); }
+</script>
+</head>
+<body>
+  <form name = "cal">
+    계산식 입력 : <input type="text" name="expr" value="2*3" size=20> <br />
+    계산 결과 : <input type="text" name="result" size=20> <p />
+    <input type="button" value="계산하기" onClick="calculate(this.form)">
+  </form>
+</body>
+</html>
