@@ -1,6 +1,6 @@
 리눅스 명령어
-vi 파일명
-nano 파일명
+vi 파일명  filename
+nano 파일명 filename
 
 깃 명령어
 git fetch
