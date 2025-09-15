@@ -9,3 +9,11 @@ hard 명령어는 복구가 안된다.
 git reset --hard HEAD^ -> 최근 커밋 하나만 삭제
 git reset --hard HEAD~n -> 최근 커밋 n 개만큼 삭제
 
+git 충돌 해결 후 merge는 두 브랜치를 합칠 때 새로운 merge commit이 생성된다
+그래서 git log -graph로 보면 가지가 갈라졌다가 합쳐지는 형태가 나온다.
+
+rebase는 현재 브랜치의 커밋들을 다른 브랜치 위로 차례대로 다시 쌓는 방식이다.
+충돌이 발생하면 그 커밋 단계에서 충돌을 해결하고 commit 을 한 후 rebase하면
+해결 커밋이 하나 더 남는다. 기본적으로 rebase --continue는 알아서 처리하니
+한 줄로 깔끔하게 유지된다.
+
