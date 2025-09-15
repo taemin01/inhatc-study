@@ -8,6 +8,7 @@ git commit --amend -m "" -> 가장 최근 커밋 메시지 수정
 hard 명령어는 복구가 안된다.
 git reset --hard HEAD^ -> 최근 커밋 하나만 삭제
 git reset --hard HEAD~n -> 최근 커밋 n 개만큼 삭제
+git push -f origin main -> 원격에는 올라가있고 로컬에서는 커밋을 삭제한 상황에 이 명령어를 사용하면 원격에서도 사라짐
 
 git 충돌 해결 후 merge는 두 브랜치를 합칠 때 새로운 merge commit이 생성된다
 그래서 git log -graph로 보면 가지가 갈라졌다가 합쳐지는 형태가 나온다.
