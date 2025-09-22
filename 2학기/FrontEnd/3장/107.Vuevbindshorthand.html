@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-bind background-color</title>
+  <style>
+    #app > div {
+      width: 200px;
+      padding: 20px;
+      border: dashed black 1px;
+    }
+    .myClass {
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: 'v-bind:' shorthand form ':'.</h1>
+<p>Take a look at the div where the class is set with the 'v-bind:' shorthand form ':'.</p>
+<div id="app">
+  <div :class="{ myClass: isImportant }">
+    Importance visualized by background color
+  </div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+      isImportant: true
+    }
+   }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+</html>

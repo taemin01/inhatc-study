@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-bind background-color</title>
+  <style>
+    #app > div {
+      width: 200px;
+      padding: 20px;
+      border: dashed black 1px;
+      background-color: lightcoral;
+    }
+  </style>
+</head>
+<body>
+
+<h1>'v-bind' Background Color Example</h1>
+
+<p>The browser sets the background color with 'hsl()' based on the value of 'bgVal' in the Vue instance.</p>
+<p>Try changing the 'bgVal' property value from anything between 0 and 360.</p>
+
+<div id="app">
+  <div v-bind:style="{ backgroundColor: 'hsl('+bgVal + ',80%,80%)' }">Notice the background color on this div tag.</div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+      bgVal: 180
+    }
+   }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+</html>

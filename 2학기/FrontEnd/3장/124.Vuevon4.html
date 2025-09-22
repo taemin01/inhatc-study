@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Food Image</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 220px;
+      padding: 20px;
+    }
+
+    #app > img {
+      float: right;
+      width: 55%;
+    }
+
+    li:hover {
+      cursor: pointer;
+      background-color: rgb(224, 224, 224);
+    }
+
+    #app > ol {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #app li {
+      padding-left: 6px;
+      border-radius: 5px;
+      width: 70px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Show Food Image</h1>
+
+<p>Click on a food name below to see an image of it.</p>
+
+<div id="app">
+  <img v-bind:src="imgUrl">
+  <ol>
+    <li v-for="food in manyFoods" v-on:click="imgUrl = food.url">
+      {{ food.name }}
+    </li>
+  </ol>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        imgUrl: 'img_pizza.svg',
+        manyFoods: [
+          {name: 'Burrito', url: 'img_burrito.svg'},
+          {name: 'Salad', url: 'img_salad.svg'},
+          {name: 'Cake', url: 'img_cake.svg'},
+          {name: 'Soup', url: 'img_soup.svg'},
+          {name: 'Fish', url: 'img_fish.svg'},
+          {name: 'Pizza', url: 'img_pizza.svg'},
+          {name: 'Rice', url: 'img_rice.svg'}
+      ]
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

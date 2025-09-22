@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Shift Image</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 20px;
+    }
+    #app > img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example</h1>
+
+<div id="app">
+  <p>Press the 'Shift' keyboard key while you do a left mouse button click on the image below to change it.</p>
+  <img v-on:click.left.shift="changeImg" v-bind:src="imgUrl">
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        imgUrlIndex : 0,
+        imgUrl: 'img_tiger_square.jpeg',
+        images: [
+          'img_tiger_square.jpeg',
+          'img_moose_square.jpeg',
+          'img_kangaroo_square.jpeg'
+        ]
+      }
+    },
+    methods: {
+      changeImg() {
+        this.imgUrlIndex++;
+        if(this.imgUrlIndex>=3){
+          this.imgUrlIndex=0
+        }
+        this.imgUrl = this.images[this.imgUrlIndex]
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

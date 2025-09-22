@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input for e-mail Address</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 200px;
+      padding: 0 10px 10px 10px;
+    }
+    #app > div {
+      width: 200px;
+      height: 50px;
+      border: solid black 1px;
+      background-color: lightgreen;
+    }
+    #app > p {
+      font-size: large;
+      font-weight: bold;
+    }
+    .valid {
+      color: green;
+    }
+    .invalid {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Input for e-mail Address</h1>
+<p>A watcher is set up to watch the e-mail input. The user is informed if the current e-mail address input is valid or invalid (missing @).</p>
+<p>The user is also informed if the input just became valid with the last input from the keyboard.</p>
+<div id="app">
+  <label>
+    <p>Type a valid e-mail address:</p>
+    <input v-type="email" v-model="inpAddress">
+  </label>
+  <p v-bind:class="myClass"><code>{{ feedbackText }}</code></p> 
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        inpAddress: '',
+        feedbackText: '',
+        myClass: 'invalid'
+      }
+    },
+    watch: {
+      inpAddress(newVal,oldVal) {
+        if(!newVal.includes('@')){
+          this.feedbackText = 'The e-mail address is NOT valid';
+          this.myClass = 'invalid';
+        }
+        else if(!oldVal.includes('@') && newVal.includes('@')) {
+          this.feedbackText = 'Perfect! You fixed it!';
+          this.myClass = 'valid'
+        }
+        else {
+          this.feedbackText = 'The e-mail address is valid :)';
+        }
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

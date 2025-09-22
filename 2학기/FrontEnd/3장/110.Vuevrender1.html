@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue page</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 130px;
+      padding-left: 20px;
+      font-weight: bold;
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example with 'v-if', 'v-else-if' and 'v-else'</h1>
+
+<p>Try changing the 'typewriterCount' value in the Vue instance to '0' or '5' and run the code again.</p>
+
+<h2>We sell typewriters</h2>
+
+<img src="img_typewriter.jpeg" alt="typewriter" width="202" height="135">
+
+<div id="app">
+  <p v-if="typewriterCount>3">
+    In stock
+  </p>
+  <p v-else-if="typewriterCount>0">
+    Very few left!
+  </p>
+  <p v-else>
+    Not in stock
+  </p>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+   data() {
+    return {
+      typewriterCount: 3
+    }
+   }
+  })
+  app.mount('#app')
+</script>
+
+</body>
+</html>

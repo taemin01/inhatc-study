@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moose count</title>
+  <style>
+    form {
+      border: dashed black 1px;
+      display: inline-block;
+      padding: 10px;
+    }
+    label {
+      padding: 5px;
+    }
+    label:hover {
+      cursor: pointer;
+      background-color: lightgray;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Data Property 'true' or 'false'</h1>
+<p>This is a responsive form feature made with Vue that gives feedback 'true' or 'false' when the user checks the checkbox.</p>
+<div id="app">
+  <form>
+    <p>
+      Important item?
+      <label>
+         <input type="checkbox" v-model="chbxVal"> 
+         {{ chbxVal }}
+      </label>
+    </p>
+  </form>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        chbxVal: false
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

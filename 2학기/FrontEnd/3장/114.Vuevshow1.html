@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>v-show</title>
+  <style>
+    #app {
+      border: black dashed 1px;
+      width: 200px;
+      padding: 0 20px 20px 20px;
+    }
+    #app div {
+      padding: 20px;
+      background-color: lightgreen;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: v-show Visibility of Div Element</h1>
+
+<div id="app">
+  <p>Find the 'showDiv' data property in the code, change it to 'false', and run the code again.</p>
+  <div v-show="showDiv">This div tag can be hidden</div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        showDiv: true
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

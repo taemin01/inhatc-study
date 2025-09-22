@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Color</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 350px;
+      padding: 0 20px;
+    }
+    #app > div {
+      width: 200px;
+      height: 80px;
+    }
+    #app span {
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Change Color</h1>
+
+<div id="app">
+  <p>Move the mouse pointer over the box below to change the background-color randomly with hsl color code.</p>
+  <div v-on:mousemove=" colorVal = Math.floor(Math.random()*360) " v-bind:style=" {backgroundColor: 'hsl('+colorVal+',60%,60%)'} "></div>
+  <p><span>backgroundColor: hsl(<strong>{{ colorVal }}</strong>, 80%, 80%)</span></p>
+  <p>To understand how to set a color in CSS with 'hsl()' see <a href="https://www.w3schools.com/css/css_colors_hsl.asp" target="_blank">our page about this</a>.</p>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        colorVal: 50
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>
