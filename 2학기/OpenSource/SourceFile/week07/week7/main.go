@@ -17,7 +17,7 @@ func main() {
 	// fmt.Println(int)
 
 	r := bufio.NewReader(os.Stdin)
-	i, err := r.ReadString('\n')
+	i, err := r.ReadString('\n', 16, 32)
 	//fmt.Println(err)
 	if err != nil {
 		log.Fatal(err) // report the error and exit the program

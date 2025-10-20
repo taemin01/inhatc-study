@@ -73,6 +73,8 @@ func main() {
     reader := bufio.NewReader(os.Stdin) // 터미널에서 글자 읽을 준비
     input, err := reader.ReadString('\n') // 줄바꿈이 들어올 때까지 글자 읽기
     // ReadString 함수는 리턴값이 두 개이므로 input, _ := 하거나 _ 대신 err로 받아서 사용
+
+    strconv.ParseInt(input, 16, 32) //16 -> 문자열 진법, 32 -> 리턴값 크기
     
     // fmt.Println(err) // 에러 출력
     if err != nil {
@@ -82,5 +84,4 @@ func main() {
     input = strings.TrimSpace(input) // 문자열 주위에 붙은 공란 및 탭 키 등 제거
     // 파이썬으로 치면 input = input.strip()
     fmt.Println(input)
-    
 }

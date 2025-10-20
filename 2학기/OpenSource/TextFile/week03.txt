@@ -7,8 +7,8 @@ history
 git clone 원격 저장소 링크 . -> 로컬에서 원격 리포지토리와 폴더 이름을 똑같이 만들어놔도
 				이렇게 하면 원격 리포지토리 폴더를 가져오지 않고 파일만 가져옴
 				opensource/opensource가 아니라 만든 opensource 밑에 파일만 가져옴 
-git branch -M main
-git remote add https://github.com/id/repositoryname.git
+git branch -M main -> 브랜치 이름 강제 변환, 현재 브랜치 이름을 강제 변환하는 것
+git remote add 저장소 이름 ttps://github.com/id/repositoryname.git
 git remote remove origin
 git clone repository url
 git push -u origin main

@@ -18,7 +18,7 @@ func main() {
 
 	//var name = "An Taemin" //2
 
-	name := "An Taemin" //3 := 는 선언할 때 사용하는 것 이미 선언 후에는 할당하는 것으로 = 를 사용
+	var name := "An Taemin" //3 := 는 선언할 때 사용하는 것 이미 선언 후에는 할당하는 것으로 = 를 사용 var 생략은 타입 추론
 
 	var num int32
 	var str string

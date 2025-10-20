@@ -2,8 +2,8 @@
 history | less -> 전체 보여주는 것이 아닌 끊어서 보여줌
 
 깃 명령어
-git fetch
-git pull
+git fetch -> 커밋(변경 이력들만 가져옴) 
+git pull -> fetch 이후 병합까지 자동 진행
 git commit --amend -m "" -> 가장 최근 커밋 메시지 수정
 hard 명령어는 복구가 안된다.
 git reset --hard HEAD^ -> 최근 커밋 하나만 삭제
