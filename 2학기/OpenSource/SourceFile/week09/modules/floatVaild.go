@@ -13,6 +13,7 @@ import (
 // Head First Go PDF chpater 4 124 page
 // GetFloat reads a floating-point number from the keyboard.
 // It returns the number read and any error encountered.
+// 패키지를 만드는 수업 GetFloat()는 온도 입력, 점수 입력 등 실수를 입력받는 프로그램에서 사용 가능한 함수
 func GetFloat() (float64, error) {
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
