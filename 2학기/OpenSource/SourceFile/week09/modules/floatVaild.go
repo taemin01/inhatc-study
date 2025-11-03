@@ -1,13 +1,13 @@
 // Package keyboard reads user input from the keyboard.
-package main
+package floatValid
 
 import (
 	"bufio"
+	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
-	"log"
-	"fmt"
 )
 
 // Head First Go PDF chpater 4 124 page
