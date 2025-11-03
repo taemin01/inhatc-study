@@ -1,4 +1,4 @@
-package main
+package test
 
 import (
 	"bufio"
@@ -14,5 +14,8 @@ func main() {
 
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n') // 줄바꿈이 들어올 때까지 글자 읽기
+	if err != nil {
+		fmt.Println(err, input)
+	}
 	fmt.Println('2')
 }

@@ -1,5 +1,4 @@
-// Package keyboard reads user input from the keyboard.
-package floatValid
+package ch04ex03
 
 import (
 	"bufio"
@@ -14,9 +13,6 @@ import (
 // GetFloat reads a floating-point number from the keyboard.
 // It returns the number read and any error encountered.
 // 패키지를 만드는 수업 GetFloat()는 온도 입력, 점수 입력 등 실수를 입력받는 프로그램에서 사용 가능한 함수
-// 상위에 go.mod가 있기 때문에 그 위치에서 하위로 접근해서 실행을 해야 되는 듯 하다.
-// 상위 위치에서 go run week10/main.go
-// 해당 위치 즉 week10이면 그 안에서 go run main.go도 가능
 func GetFloat() (float64, error) {
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
