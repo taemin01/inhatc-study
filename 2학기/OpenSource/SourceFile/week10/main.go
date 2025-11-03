@@ -12,7 +12,9 @@ import (
 	greeting "source/week10/pacakges"
 	korean "source/week10/pacakges/test"
 
-	keyboard "github.com/headfirstgo/keyboard" //go get github.com/headfirstgo/keyboard 에러 없이 가능 go.mod에 추가 됨
+	// go get github.com/headfirstgo/keyboard 에러 없이 가능 go.mod에 추가 됨
+	// go get 기말에 나올 수도 있음
+	keyboard "github.com/headfirstgo/keyboard"
 )
 
 func main() {
