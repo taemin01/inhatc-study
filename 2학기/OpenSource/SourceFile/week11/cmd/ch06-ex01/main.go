@@ -3,10 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	var subject []string
-	subject = make([]string, 3)
-	subject[0] = "Go"
-	subject[2] = "Javascript"
+	//slice 실습
+	subject := []string{"Go", "", "Javascript"} //zero value index -> [1] 출력 시 빈 칸 나옴
 
 	for _, subsubject := range subject {
 		fmt.Println(subsubject)
