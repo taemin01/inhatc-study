@@ -3,7 +3,7 @@ package version
 import (
 	"fmt"
 	"log"
-	datafile "source/week11/cmd/ch05-ex01"
+	datafile "source/week11/cmd/ch05-ex02"
 )
 
 func main() {
