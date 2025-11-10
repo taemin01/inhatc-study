@@ -2,4 +2,7 @@ module source
 
 go 1.25.1
 
-require github.com/headfirstgo/keyboard v0.0.0-20170926053303-9930bcf72703 // indirect
+require (
+	github.com/headfirstgo/datafile v0.0.0-20190307063009-c40c587e7269 // indirect
+	github.com/headfirstgo/keyboard v0.0.0-20170926053303-9930bcf72703 // indirect
+)

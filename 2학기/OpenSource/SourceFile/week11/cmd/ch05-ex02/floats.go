@@ -8,6 +8,7 @@ import (
 )
 
 // GetFloats reads a float64 from each line of a file.
+// 교수님 깃헙 보고 배열로 바꾸는 거 어떻게 하는지 봐야함
 func GetFloats(fileName string) ([]float64, error) {
 	var numbers []float64
 	file, err := os.Open(fileName)

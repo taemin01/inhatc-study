@@ -1,2 +1,4 @@
+github.com/headfirstgo/datafile v0.0.0-20190307063009-c40c587e7269 h1:c2qtZSYiBgLXZ4LGXCW0JxRb611oiks+ZFaNUA8J8gw=
+github.com/headfirstgo/datafile v0.0.0-20190307063009-c40c587e7269/go.mod h1:7VyRGcmFIiTsEPOobZkJpgOGYYYUw4QaP+81tb48q9M=
 github.com/headfirstgo/keyboard v0.0.0-20170926053303-9930bcf72703 h1:dUWxlI5MeD7l7XKR5IruZBR6R+BrNJaJFQ/CMCL0whU=
 github.com/headfirstgo/keyboard v0.0.0-20170926053303-9930bcf72703/go.mod h1:6d1pa/JpFQHwXHOqD+gxvdJe30EkP5mnc3I6lE9yTaQ=

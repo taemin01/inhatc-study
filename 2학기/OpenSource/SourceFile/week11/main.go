@@ -2,21 +2,12 @@ package main
 
 import (
 	"fmt"
-	"log"
-	datafile "source/week11/cmd/ch05-ex02"
+	"os"
 )
 
 func main() {
-	weights, err := datafile.GetFloats("data.txt")
+	numbers := os.Args[1:] //go run main.go 77.7 56.5 34.2 하면 출력을 슬라이스 진행 후 해준다
+	//함수 매개변수도 ...string 이렇게 받으면 여러개를 받을 수 있는 듯
 
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	sum := 0.0
-
-	for i := 0; i < len(weights); i++ {
-		sum += weights[i]
-	}
-	fmt.Println("Average : ", sum/float64(len(weights)))
+	fmt.Println(numbers)
 }
