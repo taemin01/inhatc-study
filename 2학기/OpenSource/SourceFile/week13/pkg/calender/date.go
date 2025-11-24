@@ -1,6 +1,9 @@
 package calendar
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 type Date struct {
 	year  int
@@ -8,7 +11,11 @@ type Date struct {
 	day   int
 }
 
+func welcome() {
+	fmt.Println("Welcome") //undxported
+}
 func (d *Date) Year() int {
+	welcome() //소문자로 시작하기 때문에 내부에서만 접근 가능
 	return d.year
 }
 func (d *Date) Month() int {
