@@ -12,7 +12,8 @@ type Date struct {
 }
 
 func welcome() {
-	fmt.Println("Welcome") //undxported
+	fmt.Println("Welcome") //unexported
+	//캡슐화를 통해 데이터를 숨긴다.
 }
 func (d *Date) Year() int {
 	welcome() //소문자로 시작하기 때문에 내부에서만 접근 가능
