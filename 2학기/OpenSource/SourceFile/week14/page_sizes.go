@@ -13,7 +13,7 @@ type Page struct {
 }
 
 func responseSize(url string, channel chan Page) {
-
+	//고루틴에 관련된 내용들만 보면 됨 시험은 고루틴까지만 나옴
 	fmt.Println("Getting", url)
 	response, err := http.Get(url)
 	if err != nil {
